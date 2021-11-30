@@ -11,19 +11,13 @@ $pid=intval($_GET['pid']);
 if(isset($_POST['submit']))
 {
 $pname=$_POST['packagename'];
-$ptype=$_POST['packagetype'];	
-$plocation=$_POST['packagelocation'];
 $pprice=$_POST['packageprice'];	
-$pfeatures=$_POST['packagefeatures'];
 $pdetails=$_POST['packagedetails'];	
 $pimage=$_FILES["packageimage"]["name"];
-$sql="update TblTourPackages set PackageName=:pname,PackageType=:ptype,PackageLocation=:plocation,PackagePrice=:pprice,PackageFetures=:pfeatures,PackageDetails=:pdetails where PackageId=:pid";
+$sql="update TblTourPackages set PackageName=:pname,PackagePrice=:pprice,PackageDetails=:pdetails where PackageId=:pid";
 $query = $dbh->prepare($sql);
 $query->bindParam(':pname',$pname,PDO::PARAM_STR);
-$query->bindParam(':ptype',$ptype,PDO::PARAM_STR);
-$query->bindParam(':plocation',$plocation,PDO::PARAM_STR);
 $query->bindParam(':pprice',$pprice,PDO::PARAM_STR);
-$query->bindParam(':pfeatures',$pfeatures,PDO::PARAM_STR);
 $query->bindParam(':pdetails',$pdetails,PDO::PARAM_STR);
 $query->bindParam(':pid',$pid,PDO::PARAM_STR);
 $query->execute();

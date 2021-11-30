@@ -130,7 +130,7 @@ foreach($results as $result)
 					<h3><?php echo htmlentities($result->PackagePrice);?> VND</h3>
 				</div>
 			</div>
-		<h3>Package Details</h3>
+		<h3>Mô tả</h3>
 				<p style="padding-top: 1%"><?php echo htmlentities($result->PackageDetails);?> </p>	
 				<div class="clearfix"></div>
 		</div>
